@@ -1,1 +1,3 @@
-export const hello = (name: string) => console.log(`Hello ${name}`);
+import * as kinematics from './kinematics';
+import * as collisions from './collisions';
+export { kinematics, collisions };
