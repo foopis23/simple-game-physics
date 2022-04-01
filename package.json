@@ -1,6 +1,6 @@
 {
   "name": "simple-game-physics",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A an extension to simple-game-math that adds functions for doing physics math.",
   "main": "lib/index.js",
   "scripts": {
