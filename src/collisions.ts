@@ -20,16 +20,16 @@ export function resolveCircleVsCircleCollision(
   radius1: number,
   radius2: number,
 ): Vector2.IVector2 {
-  const distance = Vector2.distance(pos1, pos2);
+  const distance = Vector2.distance(pos2, pos1);
   const radiiSum = radius1 + radius2;
-  const xDiff = pos2.x - pos1.x;
-  const yDiff = pos2.y - pos1.y;
+  const xDiff = pos1.x - pos2.x;
+  const yDiff = pos1.y - pos2.y;
   const xUnit = xDiff / distance;
   const yUnit = yDiff / distance;
 
   return {
-    x: pos1.x + radiiSum * xUnit,
-    y: pos1.y + radiiSum * yUnit,
+    x: pos2.x + radiiSum * xUnit,
+    y: pos2.y + radiiSum * yUnit,
   };
 }
 
