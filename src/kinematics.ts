@@ -1,4 +1,4 @@
-import { Vector2, Math } from 'simple-game-math';
+import { Vector2, Math as GameMath } from 'simple-game-math';
 
 export function applyAcceleration(
   velocity: Vector2.IVector2,
@@ -25,7 +25,7 @@ export function applyVelocity(
 export function applyDrag(velocity: Vector2.IVector2, terminalVelocity: number, deltaTime: number): Vector2.IVector2 {
   const drag = Vector2.mag(velocity) / terminalVelocity;
   return {
-    x: Math.moveTowards(velocity.x, 0, velocity.x * drag * deltaTime),
-    y: Math.moveTowards(velocity.y, 0, velocity.y * drag * deltaTime),
+    x: GameMath.moveTowards(velocity.x, 0, Math.abs(velocity.x * drag * deltaTime)),
+    y: GameMath.moveTowards(velocity.y, 0, Math.abs(velocity.y * drag * deltaTime)),
   };
 }
